@@ -22,7 +22,7 @@
       --piccadilly: #003688;
     }
     @media (prefers-color-scheme: dark) {
-      :root {
+      :root:not([data-theme="light"]) {
         --bg: #111111;
         --surface: #1b1b1b;
         --text: #f2f2f2;
@@ -31,6 +31,15 @@
         --accent: #f2f2f2;
         --accent-text: #111111;
       }
+    }
+    :root[data-theme="dark"] {
+      --bg: #111111;
+      --surface: #1b1b1b;
+      --text: #f2f2f2;
+      --muted: #9a9a9a;
+      --border: #2c2c2c;
+      --accent: #f2f2f2;
+      --accent-text: #111111;
     }
 
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -170,7 +179,7 @@
     .tube p { font-size: 15px; line-height: 1.55; color: var(--muted); }
     .tube p strong { color: var(--text); font-weight: 600; }
 
-    footer { font-size: 13px; color: var(--muted); text-align: center; }
+    footer { font-size: 13px; line-height: 1.6; color: var(--muted); text-align: center; }
 
     @media (max-width: 560px) {
       body { gap: 32px; padding: 32px 16px; }
@@ -222,6 +231,6 @@
     <p>Am besten in <strong>South Kensington</strong> aussteigen und den Schildern zum <strong>Museumstunnel</strong> folgen – ca. 5 Minuten zu Fuß, komplett unterirdisch bis zum Eingang an der Exhibition Road.</p>
   </section>
 
-  <footer>Cromwell Road, London SW7 5BD</footer>
+  <footer>Cromwell Road, London SW7 5BD<br>Inoffizielle Schnellübersicht – kein Angebot des Museums</footer>
 </body>
 </html>
